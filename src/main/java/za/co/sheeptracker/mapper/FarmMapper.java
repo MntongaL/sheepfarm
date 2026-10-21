@@ -18,7 +18,6 @@ public interface FarmMapper {
     FarmCreateResponse toResponse(Farm farm);
     List<FarmCreateResponse> toResponseList(List<Farm> farms);
 
-    @Mapping(target = "id", ignore = true)
     Farm toEntity(FarmCreateRequest request);
 
     @BeanMapping(
