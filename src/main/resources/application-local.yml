@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://ep-long-dust-b4d5di5w.c-6.us-east-2.aws.neon.tech/sheep_tracker}
+    username: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:npg_k5CixcYHKZ3g}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://ep-long-dust-b4d5di5w.c-6.us-east-2.aws.neon.tech/sheep_tracker}
+    user: ${SPRING_DATASOURCE_USERNAME:postgres}
+    password: ${SPRING_DATASOURCE_PASSWORD:npg_k5CixcYHKZ3g}

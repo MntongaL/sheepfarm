@@ -2,6 +2,7 @@ package za.co.sheeptracker.dto.treatment;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 

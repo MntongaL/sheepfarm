@@ -21,6 +21,7 @@ public interface TreatmentMapper {
     @Mapping(target = "farmId", ignore = true)
     @Mapping(target = "sheepId", ignore = true)
     @Mapping(target = "medicationId", ignore = true)
+    @Mapping(target = "recordedBy", ignore = true)
     Treatment toEntity(TreatmentCreateRequest request);
 
     // OffsetDateTime -> Instant
@@ -39,5 +40,6 @@ public interface TreatmentMapper {
     @Mapping(target = "farmId", ignore = true)
     @Mapping(target = "sheepId", ignore = true)
     @Mapping(target = "medicationId", ignore = true)
+    @Mapping(target = "recordedBy", ignore = true)
     void updateEntity(TreatmentCreateRequest request, @MappingTarget Treatment treatment);
 }

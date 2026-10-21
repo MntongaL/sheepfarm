@@ -65,6 +65,10 @@ public class PlannedSheepTreatment {
     @Column(name = "completed_at")
     private Instant completedAt;
 
+    /** User who completed it. Only allowed while status = COMPLETED (ck_pst_completed_by). */
+    @Column(name = "completed_by")
+    private UUID completedBy;
+
     @Column(name = "notes", columnDefinition = "text")
     private String notes;
 

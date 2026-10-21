@@ -53,6 +53,15 @@ public class Treatment {
     @Getter
     @Column(name = "administered_by", length = 160)
     private UUID administeredBy;
+    /** User who entered the record (set by the service from the authenticated user). */
+    @Setter
+    @Getter
+    @Column(name = "recorded_by")
+    private UUID recordedBy;
+    /** Free-text administrator name from before V18. Read-only history; never written. */
+    @Getter
+    @Column(name = "administered_by_legacy", length = 160, insertable = false, updatable = false)
+    private String administeredByLegacy;
     @Setter
     @Getter
     @Column(columnDefinition = "text")
