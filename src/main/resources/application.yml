@@ -28,11 +28,36 @@ app:
   cors:
     allowed-origins: ${CORS_ORIGINS:*}
 
-logging:
-  level:
-    root: INFO
-    com.disciplinesystem: DEBUG
-    org.hibernate.SQL: WARN
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
+logging:
+  level:
+    root: INFO
+
+    # Your application classes
+    za.co.sheeptracker: DEBUG
+
+    # Spring database access and transactions
+    org.springframework.dao: DEBUG
+    org.springframework.orm.jpa: INFO
+    org.springframework.transaction: INFO
+
+    # Hibernate SQL and database exceptions
+    org.hibernate.engine.jdbc.spi.SqlExceptionHelper: WARN
+    org.hibernate.SQL: DEBUG
+
+    # PostgreSQL connection pool
+    com.zaxxer.hikari: INFO
+
+  file:
+    name: logs/sheep-tracker.log
+
+  logback:
+    rollingpolicy:
+      max-file-size: 10MB
+      max-history: 14
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"

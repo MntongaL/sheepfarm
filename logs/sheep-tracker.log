@@ -1,8 +1,767 @@
-2026-11-13T00:23:11.889+02:00  WARN 20036 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=29m34s364ms981µs900ns).
-2026-11-13T01:08:15.003+02:00  WARN 20036 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=29m59s781ms472µs).
-2026-11-13T02:21:29.452+02:00  WARN 20036 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=58m13s737ms311µs).
-2026-11-13T08:22:09.900+02:00  WARN 20036 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=15m34s565ms859µs).
-2026-11-13T08:53:08.803+02:00  WARN 20036 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=16m28s475ms332µs400ns).
-2026-11-13T09:11:25.522+02:00  WARN 20036 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m15s511ms855µs300ns).
-2026-11-13T09:12:18.026+02:00  WARN 20036 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=52s521ms331µs600ns).
-2026-11-13T10:12:23.177+02:00  WARN 20036 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=36m34s746ms631µs600ns).
+2026-11-14T00:25:48.332+02:00  INFO 22608 --- [main] z.c.s.SheepTrackerApplication            : Starting SheepTrackerApplication using Java 24 with PID 22608 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14T00:25:48.345+02:00 DEBUG 22608 --- [main] z.c.s.SheepTrackerApplication            : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14T00:25:48.347+02:00  INFO 22608 --- [main] z.c.s.SheepTrackerApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-11-14T00:25:50.145+02:00  INFO 22608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14T00:25:50.302+02:00  INFO 22608 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139 ms. Found 11 JPA repository interfaces.
+2026-11-14T00:25:51.346+02:00  INFO 22608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-14T00:25:51.375+02:00  INFO 22608 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T00:25:51.375+02:00  INFO 22608 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14T00:25:51.490+02:00  INFO 22608 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T00:25:51.491+02:00  INFO 22608 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3012 ms
+2026-11-14T00:25:51.577+02:00 DEBUG 22608 --- [main] z.c.sheeptracker.security.JwtAuthFilter  : Filter 'jwtAuthFilter' configured for use
+2026-11-14T00:25:51.919+02:00  INFO 22608 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T00:25:52.270+02:00  INFO 22608 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4f3c7808
+2026-11-14T00:25:52.272+02:00  INFO 22608 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-14T00:25:52.324+02:00  INFO 22608 --- [main] o.f.c.i.resource.ResourceNameValidator   : 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14T00:25:52.324+02:00  INFO 22608 --- [main] o.f.c.i.resource.ResourceNameValidator   : Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14T00:25:52.334+02:00  INFO 22608 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14T00:25:52.556+02:00  INFO 22608 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 7 migrations (execution time 00:00.109s)
+2026-11-14T00:25:52.588+02:00  INFO 22608 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 15
+2026-11-14T00:25:52.597+02:00  INFO 22608 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-11-14T00:25:52.818+02:00  INFO 22608 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14T00:25:52.947+02:00  INFO 22608 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14T00:25:53.009+02:00  INFO 22608 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-14T00:25:53.611+02:00  INFO 22608 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14T00:25:53.823+02:00  INFO 22608 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14T00:25:55.690+02:00  INFO 22608 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14T00:25:55.876+02:00  INFO 22608 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14T00:25:56.745+02:00  WARN 22608 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 62990c0b-1380-4ff6-aca9-eae2e3d52d08
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14T00:25:56.756+02:00  INFO 22608 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14T00:25:57.662+02:00  INFO 22608 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-14T00:25:57.674+02:00  INFO 22608 --- [main] z.c.s.SheepTrackerApplication            : Started SheepTrackerApplication in 10.318 seconds (process running for 11.034)
+2026-11-14T00:34:45.366+02:00  INFO 22608 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14T00:34:45.405+02:00  INFO 22608 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-14T00:34:45.630+02:00  INFO 22608 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 222 ms
+2026-11-14T00:34:50.788+02:00  INFO 22608 --- [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2449 ms
+2026-11-14T00:55:36.685+02:00  INFO 740 --- [main] z.c.s.SheepTrackerApplication            : Starting SheepTrackerApplication using Java 24 with PID 740 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14T00:55:36.688+02:00 DEBUG 740 --- [main] z.c.s.SheepTrackerApplication            : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14T00:55:36.689+02:00  INFO 740 --- [main] z.c.s.SheepTrackerApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-11-14T00:55:38.181+02:00  INFO 740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14T00:55:38.332+02:00  INFO 740 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 137 ms. Found 11 JPA repository interfaces.
+2026-11-14T00:55:39.217+02:00  INFO 740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-14T00:55:39.242+02:00  INFO 740 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T00:55:39.242+02:00  INFO 740 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14T00:55:39.355+02:00  INFO 740 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T00:55:39.356+02:00  INFO 740 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2595 ms
+2026-11-14T00:55:39.457+02:00 DEBUG 740 --- [main] z.c.sheeptracker.security.JwtAuthFilter  : Filter 'jwtAuthFilter' configured for use
+2026-11-14T00:55:39.805+02:00  INFO 740 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T00:55:40.006+02:00  INFO 740 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@125f16b2
+2026-11-14T00:55:40.009+02:00  INFO 740 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-14T00:55:40.047+02:00  INFO 740 --- [main] o.f.c.i.resource.ResourceNameValidator   : 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14T00:55:40.047+02:00  INFO 740 --- [main] o.f.c.i.resource.ResourceNameValidator   : Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14T00:55:40.054+02:00  INFO 740 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14T00:55:40.166+02:00  INFO 740 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 7 migrations (execution time 00:00.062s)
+2026-11-14T00:55:40.187+02:00  INFO 740 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 15
+2026-11-14T00:55:40.193+02:00  INFO 740 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-11-14T00:55:40.363+02:00  INFO 740 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14T00:55:40.468+02:00  INFO 740 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14T00:55:40.525+02:00  INFO 740 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-14T00:55:40.986+02:00  INFO 740 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14T00:55:41.134+02:00  INFO 740 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14T00:55:42.849+02:00  INFO 740 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14T00:55:42.945+02:00  INFO 740 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14T00:55:43.818+02:00  WARN 740 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 53011527-e3ad-47f3-b72e-4679f81e6d65
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14T00:55:43.828+02:00  INFO 740 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14T00:55:44.799+02:00  INFO 740 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-14T00:55:44.811+02:00  INFO 740 --- [main] z.c.s.SheepTrackerApplication            : Started SheepTrackerApplication in 8.945 seconds (process running for 9.644)
+2026-11-14T00:56:02.945+02:00  INFO 740 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14T00:56:02.946+02:00  INFO 740 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-14T00:56:02.965+02:00  INFO 740 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2026-11-14T00:56:07.692+02:00  INFO 740 --- [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2590 ms
+2026-11-14T01:33:35.946+02:00  INFO 6312 --- [main] z.c.s.SheepTrackerApplication            : Starting SheepTrackerApplication using Java 24 with PID 6312 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14T01:33:35.950+02:00 DEBUG 6312 --- [main] z.c.s.SheepTrackerApplication            : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14T01:33:35.952+02:00  INFO 6312 --- [main] z.c.s.SheepTrackerApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-11-14T01:33:39.691+02:00  INFO 6312 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14T01:33:40.211+02:00  INFO 6312 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 497 ms. Found 11 JPA repository interfaces.
+2026-11-14T01:33:41.402+02:00  INFO 6312 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-14T01:33:41.428+02:00  INFO 6312 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T01:33:41.429+02:00  INFO 6312 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14T01:33:41.550+02:00  INFO 6312 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T01:33:41.551+02:00  INFO 6312 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5457 ms
+2026-11-14T01:33:41.661+02:00 DEBUG 6312 --- [main] z.c.sheeptracker.security.JwtAuthFilter  : Filter 'jwtAuthFilter' configured for use
+2026-11-14T01:33:41.998+02:00  INFO 6312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T01:33:42.312+02:00  INFO 6312 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@241b971f
+2026-11-14T01:33:42.315+02:00  INFO 6312 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-14T01:33:42.354+02:00  INFO 6312 --- [main] o.f.c.i.resource.ResourceNameValidator   : 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14T01:33:42.354+02:00  INFO 6312 --- [main] o.f.c.i.resource.ResourceNameValidator   : Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14T01:33:42.362+02:00  INFO 6312 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14T01:33:42.484+02:00  INFO 6312 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 7 migrations (execution time 00:00.062s)
+2026-11-14T01:33:42.505+02:00  INFO 6312 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 15
+2026-11-14T01:33:42.511+02:00  INFO 6312 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-11-14T01:33:42.699+02:00  INFO 6312 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14T01:33:42.819+02:00  INFO 6312 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14T01:33:42.886+02:00  INFO 6312 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-14T01:33:43.445+02:00  INFO 6312 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14T01:33:43.629+02:00  INFO 6312 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14T01:33:45.720+02:00  INFO 6312 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14T01:33:45.906+02:00  INFO 6312 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14T01:33:47.329+02:00  WARN 6312 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e9810cec-8b1d-467e-9b26-363f22ea15fb
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14T01:33:47.344+02:00  INFO 6312 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14T01:33:48.371+02:00  INFO 6312 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-14T01:33:48.385+02:00  INFO 6312 --- [main] z.c.s.SheepTrackerApplication            : Started SheepTrackerApplication in 13.656 seconds (process running for 14.377)
+2026-11-14T01:34:25.981+02:00  INFO 6312 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14T01:34:25.982+02:00  INFO 6312 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-14T01:34:25.989+02:00  INFO 6312 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-11-14T01:57:26.304+02:00  INFO 21084 --- [main] z.c.s.SheepTrackerApplication            : Starting SheepTrackerApplication using Java 24 with PID 21084 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14T01:57:26.306+02:00 DEBUG 21084 --- [main] z.c.s.SheepTrackerApplication            : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14T01:57:26.307+02:00  INFO 21084 --- [main] z.c.s.SheepTrackerApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-11-14T01:57:27.941+02:00  INFO 21084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14T01:57:28.097+02:00  INFO 21084 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 136 ms. Found 11 JPA repository interfaces.
+2026-11-14T01:57:29.020+02:00  INFO 21084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-14T01:57:29.045+02:00  INFO 21084 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T01:57:29.046+02:00  INFO 21084 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14T01:57:29.155+02:00  INFO 21084 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T01:57:29.156+02:00  INFO 21084 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2763 ms
+2026-11-14T01:57:29.255+02:00 DEBUG 21084 --- [main] z.c.sheeptracker.security.JwtAuthFilter  : Filter 'jwtAuthFilter' configured for use
+2026-11-14T01:57:29.583+02:00  INFO 21084 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T01:57:29.842+02:00  INFO 21084 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2ce524d2
+2026-11-14T01:57:29.844+02:00  INFO 21084 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-14T01:57:29.887+02:00  INFO 21084 --- [main] o.f.c.i.resource.ResourceNameValidator   : 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14T01:57:29.888+02:00  INFO 21084 --- [main] o.f.c.i.resource.ResourceNameValidator   : Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14T01:57:29.900+02:00  INFO 21084 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14T01:57:30.035+02:00  INFO 21084 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 7 migrations (execution time 00:00.077s)
+2026-11-14T01:57:30.069+02:00  INFO 21084 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 15
+2026-11-14T01:57:30.082+02:00  INFO 21084 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-11-14T01:57:30.286+02:00  INFO 21084 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14T01:57:31.235+02:00  INFO 21084 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14T01:57:31.306+02:00  INFO 21084 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-14T01:57:31.816+02:00  INFO 21084 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14T01:57:31.982+02:00  INFO 21084 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14T01:57:34.449+02:00  INFO 21084 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14T01:57:34.619+02:00  INFO 21084 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14T01:57:36.013+02:00  WARN 21084 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: b6cd37ea-7e10-4805-bdbb-8cb069c40ad2
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14T01:57:36.025+02:00  INFO 21084 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14T01:57:37.143+02:00  INFO 21084 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-14T01:57:37.156+02:00  INFO 21084 --- [main] z.c.s.SheepTrackerApplication            : Started SheepTrackerApplication in 11.732 seconds (process running for 12.458)
+2026-11-14T01:57:40.789+02:00  INFO 21084 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14T01:57:40.790+02:00  INFO 21084 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-14T01:57:40.792+02:00  INFO 21084 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-11-14T02:03:21.966+02:00  INFO 8992 --- [main] z.c.s.SheepTrackerApplication            : Starting SheepTrackerApplication using Java 24 with PID 8992 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14T02:03:21.969+02:00 DEBUG 8992 --- [main] z.c.s.SheepTrackerApplication            : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14T02:03:21.970+02:00  INFO 8992 --- [main] z.c.s.SheepTrackerApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-11-14T02:03:23.816+02:00  INFO 8992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14T02:03:24.041+02:00  INFO 8992 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 204 ms. Found 11 JPA repository interfaces.
+2026-11-14T02:03:25.207+02:00  INFO 8992 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-14T02:03:25.234+02:00  INFO 8992 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T02:03:25.235+02:00  INFO 8992 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14T02:03:25.417+02:00  INFO 8992 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T02:03:25.419+02:00  INFO 8992 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3362 ms
+2026-11-14T02:03:25.600+02:00 DEBUG 8992 --- [main] z.c.sheeptracker.security.JwtAuthFilter  : Filter 'jwtAuthFilter' configured for use
+2026-11-14T02:03:26.113+02:00  INFO 8992 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T02:03:26.411+02:00  INFO 8992 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@255d9277
+2026-11-14T02:03:26.415+02:00  INFO 8992 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-14T02:03:26.476+02:00  INFO 8992 --- [main] o.f.c.i.resource.ResourceNameValidator   : 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14T02:03:26.477+02:00  INFO 8992 --- [main] o.f.c.i.resource.ResourceNameValidator   : Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14T02:03:26.492+02:00  INFO 8992 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14T02:03:26.777+02:00  INFO 8992 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 7 migrations (execution time 00:00.166s)
+2026-11-14T02:03:26.813+02:00  INFO 8992 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 15
+2026-11-14T02:03:26.823+02:00  INFO 8992 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-11-14T02:03:27.161+02:00  INFO 8992 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14T02:03:27.336+02:00  INFO 8992 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14T02:03:27.442+02:00  INFO 8992 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-14T02:03:28.345+02:00  INFO 8992 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14T02:03:28.666+02:00  INFO 8992 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14T02:03:31.210+02:00  INFO 8992 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14T02:03:31.345+02:00  INFO 8992 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14T02:03:32.821+02:00  WARN 8992 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 7d922d3c-1342-4473-b601-59049690d58e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14T02:03:32.849+02:00  INFO 8992 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14T02:03:34.336+02:00  INFO 8992 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-14T02:03:34.355+02:00  INFO 8992 --- [main] z.c.s.SheepTrackerApplication            : Started SheepTrackerApplication in 13.321 seconds (process running for 14.046)
+2026-11-14T02:03:39.383+02:00  INFO 8992 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14T02:03:39.384+02:00  INFO 8992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-14T02:03:39.407+02:00  INFO 8992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 22 ms
+2026-11-14T02:06:36.545+02:00  INFO 13412 --- [main] z.c.s.SheepTrackerApplication            : Starting SheepTrackerApplication using Java 24 with PID 13412 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14T02:06:36.557+02:00 DEBUG 13412 --- [main] z.c.s.SheepTrackerApplication            : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14T02:06:36.568+02:00  INFO 13412 --- [main] z.c.s.SheepTrackerApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-11-14T02:06:40.092+02:00  INFO 13412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14T02:06:40.330+02:00  INFO 13412 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 214 ms. Found 11 JPA repository interfaces.
+2026-11-14T02:06:42.201+02:00  INFO 13412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-14T02:06:42.230+02:00  INFO 13412 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T02:06:42.230+02:00  INFO 13412 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14T02:06:42.363+02:00  INFO 13412 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T02:06:42.364+02:00  INFO 13412 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5095 ms
+2026-11-14T02:06:42.476+02:00 DEBUG 13412 --- [main] z.c.sheeptracker.security.JwtAuthFilter  : Filter 'jwtAuthFilter' configured for use
+2026-11-14T02:06:42.918+02:00  INFO 13412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T02:06:43.261+02:00  INFO 13412 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2ce524d2
+2026-11-14T02:06:43.264+02:00  INFO 13412 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-14T02:06:43.304+02:00  INFO 13412 --- [main] o.f.c.i.resource.ResourceNameValidator   : 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14T02:06:43.305+02:00  INFO 13412 --- [main] o.f.c.i.resource.ResourceNameValidator   : Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14T02:06:43.313+02:00  INFO 13412 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14T02:06:43.463+02:00  INFO 13412 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 7 migrations (execution time 00:00.085s)
+2026-11-14T02:06:43.495+02:00  INFO 13412 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 15
+2026-11-14T02:06:43.504+02:00  INFO 13412 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-11-14T02:06:43.729+02:00  INFO 13412 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14T02:06:43.868+02:00  INFO 13412 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14T02:06:43.951+02:00  INFO 13412 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-14T02:06:44.598+02:00  INFO 13412 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14T02:06:44.807+02:00  INFO 13412 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14T02:06:46.675+02:00  INFO 13412 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14T02:06:46.784+02:00  INFO 13412 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14T02:06:47.581+02:00  WARN 13412 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 22648460-aff1-445a-a264-70abe6abf136
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14T02:06:47.592+02:00  INFO 13412 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14T02:06:48.465+02:00  INFO 13412 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-14T02:06:48.478+02:00  INFO 13412 --- [main] z.c.s.SheepTrackerApplication            : Started SheepTrackerApplication in 18.108 seconds (process running for 20.708)
+2026-11-14T02:07:11.564+02:00  INFO 13412 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14T02:07:11.564+02:00  INFO 13412 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-14T02:07:11.566+02:00  INFO 13412 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-14T02:08:55.564+02:00  INFO 14224 --- [main] z.c.s.SheepTrackerApplication            : Starting SheepTrackerApplication using Java 24 with PID 14224 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14T02:08:55.567+02:00 DEBUG 14224 --- [main] z.c.s.SheepTrackerApplication            : Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14T02:08:55.569+02:00  INFO 14224 --- [main] z.c.s.SheepTrackerApplication            : No active profile set, falling back to 1 default profile: "default"
+2026-11-14T02:08:57.105+02:00  INFO 14224 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14T02:08:57.259+02:00  INFO 14224 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 139 ms. Found 11 JPA repository interfaces.
+2026-11-14T02:08:58.107+02:00  INFO 14224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-14T02:08:58.129+02:00  INFO 14224 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T02:08:58.129+02:00  INFO 14224 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14T02:08:58.243+02:00  INFO 14224 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T02:08:58.244+02:00  INFO 14224 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2601 ms
+2026-11-14T02:08:58.318+02:00 DEBUG 14224 --- [main] z.c.sheeptracker.security.JwtAuthFilter  : Filter 'jwtAuthFilter' configured for use
+2026-11-14T02:08:58.644+02:00  INFO 14224 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T02:08:58.881+02:00  INFO 14224 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2ce524d2
+2026-11-14T02:08:58.884+02:00  INFO 14224 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-14T02:08:58.921+02:00  INFO 14224 --- [main] o.f.c.i.resource.ResourceNameValidator   : 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14T02:08:58.921+02:00  INFO 14224 --- [main] o.f.c.i.resource.ResourceNameValidator   : Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14T02:08:58.930+02:00  INFO 14224 --- [main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14T02:08:59.031+02:00  INFO 14224 --- [main] o.f.core.internal.command.DbValidate     : Successfully validated 7 migrations (execution time 00:00.061s)
+2026-11-14T02:08:59.067+02:00  INFO 14224 --- [main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 15
+2026-11-14T02:08:59.072+02:00  INFO 14224 --- [main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-11-14T02:08:59.253+02:00  INFO 14224 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14T02:08:59.377+02:00  INFO 14224 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14T02:08:59.454+02:00  INFO 14224 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-14T02:09:00.055+02:00  INFO 14224 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14T02:09:00.204+02:00  INFO 14224 --- [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14T02:09:02.640+02:00  INFO 14224 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14T02:09:02.736+02:00  INFO 14224 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14T02:09:03.689+02:00  WARN 14224 --- [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d92cd93b-52d7-41b2-a36c-c63eb221a032
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14T02:09:03.702+02:00  INFO 14224 --- [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14T02:09:04.558+02:00  INFO 14224 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-14T02:09:04.570+02:00  INFO 14224 --- [main] z.c.s.SheepTrackerApplication            : Started SheepTrackerApplication in 9.851 seconds (process running for 10.6)
+2026-11-14T02:09:11.961+02:00  INFO 14224 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14T02:09:11.961+02:00  INFO 14224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-14T02:09:11.963+02:00  INFO 14224 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-11-14 02:12:30.690 INFO  [main] z.c.s.SheepTrackerApplication - Starting SheepTrackerApplication using Java 24 with PID 18728 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14 02:12:30.693 DEBUG [main] z.c.s.SheepTrackerApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14 02:12:30.694 INFO  [main] z.c.s.SheepTrackerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-11-14 02:12:32.316 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14 02:12:32.476 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 143 ms. Found 11 JPA repository interfaces.
+2026-11-14 02:12:33.533 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-11-14 02:12:33.561 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-14 02:12:33.563 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14 02:12:33.686 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-14 02:12:33.687 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2914 ms
+2026-11-14 02:12:33.786 DEBUG [main] z.c.s.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2026-11-14 02:12:34.128 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-14 02:12:34.413 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@125f16b2
+2026-11-14 02:12:34.415 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-14 02:12:34.452 INFO  [main] o.f.c.i.r.ResourceNameValidator - 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14 02:12:34.452 INFO  [main] o.f.c.i.r.ResourceNameValidator - Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14 02:12:34.460 INFO  [main] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14 02:12:34.575 INFO  [main] o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.059s)
+2026-11-14 02:12:34.595 INFO  [main] o.f.core.internal.command.DbMigrate - Current version of schema "public": 15
+2026-11-14 02:12:34.601 INFO  [main] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-11-14 02:12:34.772 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14 02:12:34.888 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14 02:12:34.956 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-14 02:12:35.462 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14 02:12:35.620 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14 02:12:37.305 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14 02:12:37.432 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14 02:12:38.273 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 28dca622-4602-4fe2-b600-9812ce831131
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14 02:12:38.286 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14 02:12:39.353 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-11-14 02:12:39.365 INFO  [main] z.c.s.SheepTrackerApplication - Started SheepTrackerApplication in 9.599 seconds (process running for 10.32)
+2026-11-14 02:12:54.632 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14 02:12:54.637 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-14 02:12:54.650 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2026-11-14 02:22:06.596 INFO  [main] z.c.s.SheepTrackerApplication - Starting SheepTrackerApplication using Java 24 with PID 17212 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14 02:22:06.598 DEBUG [main] z.c.s.SheepTrackerApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14 02:22:06.599 INFO  [main] z.c.s.SheepTrackerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-11-14 02:22:08.379 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14 02:22:08.566 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 168 ms. Found 11 JPA repository interfaces.
+2026-11-14 02:22:10.356 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-11-14 02:22:10.406 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-14 02:22:10.407 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14 02:22:10.602 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-14 02:22:10.605 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3914 ms
+2026-11-14 02:22:10.783 DEBUG [main] z.c.s.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2026-11-14 02:22:11.282 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-14 02:22:11.566 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@578c3fd9
+2026-11-14 02:22:11.569 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-14 02:22:11.606 INFO  [main] o.f.c.i.r.ResourceNameValidator - 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14 02:22:11.606 INFO  [main] o.f.c.i.r.ResourceNameValidator - Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14 02:22:11.614 INFO  [main] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14 02:22:11.718 INFO  [main] o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.060s)
+2026-11-14 02:22:11.744 INFO  [main] o.f.core.internal.command.DbMigrate - Current version of schema "public": 15
+2026-11-14 02:22:11.751 INFO  [main] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-11-14 02:22:11.958 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14 02:22:12.097 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14 02:22:12.180 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-14 02:22:12.734 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14 02:22:12.946 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14 02:22:16.670 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14 02:22:16.779 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14 02:22:18.307 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 617900f0-523b-471e-9d5c-59658984e58e
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14 02:22:18.323 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14 02:22:19.249 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-11-14 02:22:19.261 INFO  [main] z.c.s.SheepTrackerApplication - Started SheepTrackerApplication in 13.688 seconds (process running for 14.679)
+2026-11-14 02:22:38.223 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14 02:22:38.224 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-14 02:22:38.228 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-11-14 02:27:05.979 INFO  [main] z.c.s.SheepTrackerApplication - Starting SheepTrackerApplication using Java 24 with PID 22788 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14 02:27:05.982 DEBUG [main] z.c.s.SheepTrackerApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14 02:27:05.984 INFO  [main] z.c.s.SheepTrackerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-11-14 02:27:08.100 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14 02:27:08.363 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 238 ms. Found 11 JPA repository interfaces.
+2026-11-14 02:27:09.431 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-11-14 02:27:09.457 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-14 02:27:09.458 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14 02:27:09.572 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-14 02:27:09.573 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3462 ms
+2026-11-14 02:27:09.676 DEBUG [main] z.c.s.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2026-11-14 02:27:10.015 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-14 02:27:10.232 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2c8b8de0
+2026-11-14 02:27:10.234 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-14 02:27:10.268 INFO  [main] o.f.c.i.r.ResourceNameValidator - 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14 02:27:10.268 INFO  [main] o.f.c.i.r.ResourceNameValidator - Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14 02:27:10.275 INFO  [main] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14 02:27:10.361 INFO  [main] o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.049s)
+2026-11-14 02:27:10.399 INFO  [main] o.f.core.internal.command.DbMigrate - Current version of schema "public": 15
+2026-11-14 02:27:10.404 INFO  [main] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-11-14 02:27:10.638 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14 02:27:10.775 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14 02:27:10.895 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-14 02:27:11.735 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14 02:27:12.005 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14 02:27:15.216 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14 02:27:15.321 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14 02:27:16.175 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 09f34bf1-e7a0-4dc4-890b-9af06a2ce1b0
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14 02:27:16.190 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14 02:27:17.228 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-11-14 02:27:17.242 INFO  [main] z.c.s.SheepTrackerApplication - Started SheepTrackerApplication in 12.552 seconds (process running for 13.607)
+2026-11-14 02:27:43.472 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14 02:27:43.473 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-14 02:27:43.479 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 6 ms
+2026-11-14 02:29:12.502 INFO  [main] z.c.s.SheepTrackerApplication - Starting SheepTrackerApplication using Java 24 with PID 1764 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14 02:29:12.504 DEBUG [main] z.c.s.SheepTrackerApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14 02:29:12.505 INFO  [main] z.c.s.SheepTrackerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-11-14 02:29:14.240 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14 02:29:14.399 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 144 ms. Found 11 JPA repository interfaces.
+2026-11-14 02:29:15.331 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-11-14 02:29:15.358 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-14 02:29:15.359 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14 02:29:15.473 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-14 02:29:15.473 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2888 ms
+2026-11-14 02:29:15.567 DEBUG [main] z.c.s.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2026-11-14 02:29:15.896 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-14 02:29:16.112 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2c8b8de0
+2026-11-14 02:29:16.114 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-14 02:29:16.144 INFO  [main] o.f.c.i.r.ResourceNameValidator - 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14 02:29:16.144 INFO  [main] o.f.c.i.r.ResourceNameValidator - Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14 02:29:16.151 INFO  [main] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14 02:29:16.236 INFO  [main] o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.052s)
+2026-11-14 02:29:16.281 INFO  [main] o.f.core.internal.command.DbMigrate - Current version of schema "public": 15
+2026-11-14 02:29:16.288 INFO  [main] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-11-14 02:29:16.454 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14 02:29:16.587 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14 02:29:16.678 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-14 02:29:17.256 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14 02:29:17.429 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14 02:29:19.216 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14 02:29:19.299 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14 02:29:20.168 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 6a68fc1e-0406-4165-a9ed-679369453b42
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14 02:29:20.178 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14 02:29:21.189 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-11-14 02:29:21.203 INFO  [main] z.c.s.SheepTrackerApplication - Started SheepTrackerApplication in 9.555 seconds (process running for 10.257)
+2026-11-14 02:29:29.239 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14 02:29:29.239 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-14 02:29:29.241 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-11-14 02:31:40.756 INFO  [main] z.c.s.SheepTrackerApplication - Starting SheepTrackerApplication using Java 24 with PID 14464 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14 02:31:40.758 DEBUG [main] z.c.s.SheepTrackerApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14 02:31:40.759 INFO  [main] z.c.s.SheepTrackerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-11-14 02:31:43.010 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14 02:31:43.168 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 143 ms. Found 11 JPA repository interfaces.
+2026-11-14 02:31:44.023 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-11-14 02:31:44.046 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-14 02:31:44.046 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14 02:31:44.148 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-14 02:31:44.149 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3282 ms
+2026-11-14 02:31:44.222 DEBUG [main] z.c.s.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2026-11-14 02:31:44.515 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-14 02:31:44.743 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6cdee57
+2026-11-14 02:31:44.745 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-14 02:31:44.775 INFO  [main] o.f.c.i.r.ResourceNameValidator - 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14 02:31:44.775 INFO  [main] o.f.c.i.r.ResourceNameValidator - Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14 02:31:44.782 INFO  [main] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14 02:31:44.873 INFO  [main] o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.050s)
+2026-11-14 02:31:44.906 INFO  [main] o.f.core.internal.command.DbMigrate - Current version of schema "public": 15
+2026-11-14 02:31:44.912 INFO  [main] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-11-14 02:31:45.078 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14 02:31:45.194 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14 02:31:45.260 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-14 02:31:45.798 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14 02:31:45.935 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14 02:31:47.659 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14 02:31:47.749 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14 02:31:48.623 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: c9f82970-572d-434e-a30b-4f5ff3cdb692
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14 02:31:48.631 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14 02:31:49.513 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-11-14 02:31:49.524 INFO  [main] z.c.s.SheepTrackerApplication - Started SheepTrackerApplication in 9.835 seconds (process running for 10.545)
+2026-11-14 02:32:04.896 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14 02:32:04.897 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-14 02:32:04.900 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-11-14 02:32:19.436 DEBUG [http-nio-8080-exec-4] org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.onboarded,u1_0.password_hash,u1_0.updated_at from users u1_0 where u1_0.email=?
+2026-11-14 02:35:16.689 INFO  [main] z.c.s.SheepTrackerApplication - Starting SheepTrackerApplication using Java 24 with PID 17328 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14 02:35:16.692 DEBUG [main] z.c.s.SheepTrackerApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14 02:35:16.694 INFO  [main] z.c.s.SheepTrackerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-11-14 02:35:18.768 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14 02:35:18.927 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 145 ms. Found 11 JPA repository interfaces.
+2026-11-14 02:35:20.659 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-11-14 02:35:20.684 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-14 02:35:20.685 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14 02:35:20.815 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-14 02:35:20.815 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3961 ms
+2026-11-14 02:35:20.910 DEBUG [main] z.c.s.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2026-11-14 02:35:21.267 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-14 02:35:21.497 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6cdee57
+2026-11-14 02:35:21.499 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-14 02:35:21.534 INFO  [main] o.f.c.i.r.ResourceNameValidator - 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14 02:35:21.535 INFO  [main] o.f.c.i.r.ResourceNameValidator - Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14 02:35:21.543 INFO  [main] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14 02:35:21.641 INFO  [main] o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.052s)
+2026-11-14 02:35:21.674 INFO  [main] o.f.core.internal.command.DbMigrate - Current version of schema "public": 15
+2026-11-14 02:35:21.685 INFO  [main] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-11-14 02:35:21.913 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14 02:35:22.050 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14 02:35:22.134 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-14 02:35:22.668 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14 02:35:22.865 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14 02:35:24.694 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14 02:35:24.811 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14 02:35:25.817 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 07bba4f2-1eb6-4221-810a-65a9f478efb7
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14 02:35:25.836 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14 02:35:27.566 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-11-14 02:35:27.589 INFO  [main] z.c.s.SheepTrackerApplication - Started SheepTrackerApplication in 12.116 seconds (process running for 13.075)
+2026-11-14 02:35:31.242 INFO  [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14 02:35:31.245 INFO  [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-14 02:35:31.249 INFO  [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-11-14 02:35:46.477 DEBUG [http-nio-8080-exec-2] org.hibernate.SQL - select u1_0.id,u1_0.created_at,u1_0.email,u1_0.name,u1_0.onboarded,u1_0.password_hash,u1_0.updated_at from users u1_0 where u1_0.email=?
+2026-11-14 02:41:05.802 INFO  [main] z.c.s.SheepTrackerApplication - Starting SheepTrackerApplication using Java 24 with PID 21276 (C:\dev\sheep-treatment-backend\sheepfarm\target\classes started by ADMIN in C:\dev\sheep-treatment-backend\sheepfarm)
+2026-11-14 02:41:05.806 DEBUG [main] z.c.s.SheepTrackerApplication - Running with Spring Boot v3.4.5, Spring v6.2.6
+2026-11-14 02:41:05.809 INFO  [main] z.c.s.SheepTrackerApplication - No active profile set, falling back to 1 default profile: "default"
+2026-11-14 02:41:08.690 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14 02:41:08.896 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 189 ms. Found 11 JPA repository interfaces.
+2026-11-14 02:41:10.071 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-11-14 02:41:10.110 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-14 02:41:10.111 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-11-14 02:41:10.375 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-11-14 02:41:10.376 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 4374 ms
+2026-11-14 02:41:10.558 DEBUG [main] z.c.s.security.JwtAuthFilter - Filter 'jwtAuthFilter' configured for use
+2026-11-14 02:41:11.276 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-11-14 02:41:11.669 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@ca7e37f
+2026-11-14 02:41:11.672 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-11-14 02:41:11.718 INFO  [main] o.f.c.i.r.ResourceNameValidator - 2 SQL migrations were detected but not run because they did not follow the filename convention.
+2026-11-14 02:41:11.718 INFO  [main] o.f.c.i.r.ResourceNameValidator - Set 'validateMigrationNaming' to true to fail fast and see a list of the invalid file names.
+2026-11-14 02:41:11.728 INFO  [main] org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/sheep_tracker (PostgreSQL 17.6)
+2026-11-14 02:41:11.852 INFO  [main] o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.068s)
+2026-11-14 02:41:11.878 INFO  [main] o.f.core.internal.command.DbMigrate - Current version of schema "public": 15
+2026-11-14 02:41:11.886 INFO  [main] o.f.core.internal.command.DbMigrate - Schema "public" is up to date. No migration necessary.
+2026-11-14 02:41:12.106 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14 02:41:12.273 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-11-14 02:41:12.384 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-11-14 02:41:13.267 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14 02:41:13.461 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.6
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-14 02:41:15.609 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14 02:41:15.712 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14 02:41:16.820 WARN  [main] o.s.b.a.s.s.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: c65c5480-532f-43dd-87d2-95d9336fbd75
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-14 02:41:16.832 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-14 02:41:18.151 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-11-14 02:41:18.166 INFO  [main] z.c.s.SheepTrackerApplication - Started SheepTrackerApplication in 13.993 seconds (process running for 15.134)
+2026-11-14 02:43:34.103 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14 02:43:34.105 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-14 02:43:34.129 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 17 ms
+2026-11-14 02:43:35.065 ERROR [http-nio-8080-exec-1] z.c.s.common.ApiExceptionHandler - Unhandled exception: method=POST, path=/api/v1/farm
+jakarta.validation.UnexpectedTypeException: HV000030: No validator could be found for constraint 'jakarta.validation.constraints.NotBlank' validating type 'java.time.OffsetDateTime'. Check configuration for 'createdAt'
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getExceptionForNullValidator(ConstraintTree.java:116)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.getInitializedConstraintValidator(ConstraintTree.java:162)
+	at org.hibernate.validator.internal.engine.constraintvalidation.SimpleConstraintTree.validateConstraints(SimpleConstraintTree.java:58)
+	at org.hibernate.validator.internal.engine.constraintvalidation.ConstraintTree.validateConstraints(ConstraintTree.java:75)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.doValidateConstraint(MetaConstraint.java:130)
+	at org.hibernate.validator.internal.metadata.core.MetaConstraint.validateConstraint(MetaConstraint.java:123)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateMetaConstraint(ValidatorImpl.java:555)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForSingleDefaultGroupElement(ValidatorImpl.java:518)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForDefaultGroup(ValidatorImpl.java:488)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateConstraintsForCurrentGroup(ValidatorImpl.java:450)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validateInContext(ValidatorImpl.java:400)
+	at org.hibernate.validator.internal.engine.ValidatorImpl.validate(ValidatorImpl.java:172)
+	at org.springframework.validation.beanvalidation.SpringValidatorAdapter.validate(SpringValidatorAdapter.java:105)
+	at org.springframework.boot.autoconfigure.validation.ValidatorAdapter.validate(ValidatorAdapter.java:67)
+	at org.springframework.validation.DataBinder.validate(DataBinder.java:1429)
+	at org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodArgumentResolver.validateIfApplicable(AbstractMessageConverterMethodArgumentResolver.java:291)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor.resolveArgument(RequestResponseBodyMethodProcessor.java:157)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:122)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:227)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:181)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:986)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:891)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at za.co.sheeptracker.security.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:57)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1740)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1189)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:658)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1447)
