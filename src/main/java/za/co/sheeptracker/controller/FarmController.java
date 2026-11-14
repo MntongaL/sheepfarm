@@ -4,9 +4,8 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import za.co.sheeptracker.dto.auth.farm.FarmCreateRequest;
-import za.co.sheeptracker.dto.auth.farm.FarmCreateResponse;
-import za.co.sheeptracker.entity.Farm;
+import za.co.sheeptracker.dto.farm.FarmCreateRequest;
+import za.co.sheeptracker.dto.farm.FarmCreateResponse;
 import za.co.sheeptracker.service.FarmService;
 
 import java.util.*;

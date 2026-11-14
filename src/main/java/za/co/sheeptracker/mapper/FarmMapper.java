@@ -6,8 +6,8 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.NullValuePropertyMappingStrategy;
 
-import za.co.sheeptracker.dto.auth.farm.FarmCreateRequest;
-import za.co.sheeptracker.dto.auth.farm.FarmCreateResponse;
+import za.co.sheeptracker.dto.farm.FarmCreateRequest;
+import za.co.sheeptracker.dto.farm.FarmCreateResponse;
 import za.co.sheeptracker.entity.Farm;
 
 import java.util.List;

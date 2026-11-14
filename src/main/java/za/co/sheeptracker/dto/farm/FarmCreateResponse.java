@@ -1,4 +1,4 @@
-package za.co.sheeptracker.dto.auth.farm;
+package za.co.sheeptracker.dto.farm;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;

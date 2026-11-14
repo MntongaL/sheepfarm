@@ -1,0 +1,27 @@
+
+# Development environment Dockerfile
+FROM maven:3.9.9-amazoncorretto-17 AS build
+
+WORKDIR /app
+
+# Copy Maven configuration and source code
+COPY pom.xml .
+COPY src ./src
+
+# Build the Spring Boot application
+RUN mvn clean package -DskipTests
+
+# Runtime image
+FROM amazoncorretto:17-alpine
+
+WORKDIR /app
+
+COPY --from=build /app/target/*.jar app.jar
+
+# Render provides PORT at runtime
+ENV SPRING_PROFILES_ACTIVE=dev
+ENV SERVER_PORT=8080
+
+EXPOSE 8080
+
+ENTRYPOINT ["sh", "-c", "java -jar app.jar --server.port=${PORT:-8080}"]
